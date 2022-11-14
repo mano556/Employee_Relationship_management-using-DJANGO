@@ -1,0 +1,44 @@
+{% extends 'Employee_app/layouts/main.html' %}
+
+{% block content %}
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+    <div class="col-12"><h1>Update Employee</h1></div>
+    <hr style="border-color:#b8bfc2">
+    </div>
+    <section class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <form method="POST" action="{% url 'update_record_2' modify.id %}">
+                        
+                        {% csrf_token %}
+                        
+                        <div class="mb-4">
+                            <label for="" class="form-label">Enter First name</label>
+                        <input type="text" name="fname" id="fname" class="form-control" value="{{modify.Employeee_fname}}">
+                        </div>
+                        <div class="mb-4">
+                            <label for="" class="form-label">Enter last name</label>
+                            <input type="text" name="lname" id="lname" class="form-control" value="{{modify.Employeee_lname}}">
+                            </div>
+                   
+                        <div class="mb-4">
+                            <label for="" class="form-label">Enter Emailid</label>
+                        <input type="text" name="mailid" id="mailid" class="form-control"  value="{{modify.Employeee_mail_id}}">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        
+                    </form>
+                   
+                        
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    
+</div>
+{% endblock content %}
